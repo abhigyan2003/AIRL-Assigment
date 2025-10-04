@@ -1,9 +1,8 @@
 # AIRL-Assigment
 GitHub repository for the assignment.
 
----
 
-##  Q1 — Vision Transformer (ViT) on CIFAR-10
+##   Vision Transformer (ViT) on CIFAR-10
 
 
 ###  Goal  
@@ -64,7 +63,7 @@ Implement a Vision Transformer (ViT) from scratch in PyTorch and train it on the
 
 
 
-##  Q2 — Text-Driven Image Segmentation (SAM 2 + GroundingDINO)
+##   Text-Driven Image Segmentation (SAM 2 + GroundingDINO)
 
 ###  Goal  
 Perform text-prompted segmentation on an image using **Segment Anything 2 (SAM 2)** guided by **GroundingDINO** for region proposals.
