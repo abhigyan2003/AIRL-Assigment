@@ -59,7 +59,7 @@ Achieve the **highest possible test accuracy** using different model configurati
 
 | Metric | Value |
 |---------|--------|
-| **Test Accuracy** | **91.4 %** |
+| **Test Accuracy** | **76 %** |
 | Training Time (GPU: T4) | ~45 minutes |
 | Parameters | ~22 M |
 
