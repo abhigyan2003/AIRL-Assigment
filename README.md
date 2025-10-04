@@ -3,15 +3,12 @@ GitHub repository for the assignment.
 
 ---
 
-## 🚀 Q1 — Vision Transformer (ViT) on CIFAR-10
+##  Q1 — Vision Transformer (ViT) on CIFAR-10
 
-### 📄 Paper Reference  
-> *An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale*  
-> Dosovitskiy et al., ICLR 2021  
 
-### 🎯 Goal  
+###  Goal  
 Implement a Vision Transformer (ViT) from scratch in PyTorch and train it on the CIFAR-10 dataset (10 classes).  
-Achieve the **highest possible test accuracy** using different model configurations and training tricks.
+
 
 ---
 
@@ -24,7 +21,7 @@ Achieve the **highest possible test accuracy** using different model configurati
 
 ---
 
-### 🧩 Model Overview
+###  Model Overview
 
 | Component | Description |
 |------------|-------------|
@@ -36,7 +33,7 @@ Achieve the **highest possible test accuracy** using different model configurati
 
 ---
 
-### 🧪 Best Configuration
+###  Best Configuration
 
 | Hyperparameter | Value |
 |-----------------|--------|
@@ -55,7 +52,7 @@ Achieve the **highest possible test accuracy** using different model configurati
 
 ---
 
-### 📊 Results
+###  Results
 
 | Metric | Value |
 |---------|--------|
@@ -65,76 +62,32 @@ Achieve the **highest possible test accuracy** using different model configurati
 
 ---
 
-### 💡 Bonus Analysis
 
-- **Patch Size Trade-off:**  
-  Smaller patches (4×4) retain finer spatial detail but increase sequence length. For CIFAR-10, 4×4 gave better results than 8×8.  
 
-- **Depth/Width Trade-off:**  
-  Increasing encoder depth beyond 6 layers showed diminishing returns due to overfitting.  
+##  Q2 — Text-Driven Image Segmentation (SAM 2 + GroundingDINO)
 
-- **Augmentation Effects:**  
-  Stronger augmentations (CutMix + MixUp) significantly improved generalization.  
-
-- **Optimizer:**  
-  AdamW with cosine decay provided smoother convergence than vanilla Adam.
-
----
-
-## 🎨 Q2 — Text-Driven Image Segmentation (SAM 2 + GroundingDINO)
-
-### 🎯 Goal  
+###  Goal  
 Perform text-prompted segmentation on an image using **Segment Anything 2 (SAM 2)** guided by **GroundingDINO** for region proposals.
 
 ---
 
-### ⚙️ How to Run (Google Colab)
 
-1. Open **[q2.ipynb](./q2.ipynb)** in Colab.  
-2. Ensure **GPU runtime** is selected.  
-3. Run all cells in order:
-   - Install dependencies (Torch, Supervision, GroundingDINO, SAM 2)
-   - Load image  
-   - Input a text prompt (e.g., `"a red bicycle"`)
-   - GroundingDINO detects bounding boxes for the text prompt  
-   - SAM 2 refines segmentation mask  
-   - Overlay mask on the image and visualize the result
-
----
-
-### 🧩 Pipeline Overview
+###  Pipeline Overview
 
 1. **Input Image**  
 2. **Text Prompt → Region Proposal** via **GroundingDINO**  
 3. **Region Proposal → Mask Generation** via **SAM 2**  
 4. **Overlay Mask on Image**
 
----
 
-### 📷 Example Output
-| Input Image | Text Prompt | Segmented Output |
-|--------------|--------------|------------------|
-| ![input](https://github.com/user/repo/assets/input.jpg) | `"a red bicycle"` | ![output](https://github.com/user/repo/assets/output.jpg) |
+###  Limitations
 
-*(Replace with your actual example in the repo.)*
-
----
-
-### ⚠️ Limitations
-
-- Segmentation quality depends on **GroundingDINO’s region accuracy**.  
-- Ambiguous or multi-object prompts may cause incorrect masks.  
+- Segmentation quality depends on **GroundingDINO’s region accuracy**.   
 - SAM 2 models are large — require **GPU memory ≥ 12 GB** for smooth inference.
 
 ---
 
-### 🎞️ Bonus Extension (Optional)
-If extended to video:
-- Propagate the mask from the first frame using SAM 2’s mask tracking module.
-- Works for 10–30 second clips.
-- Demonstrated via frame-wise segmentation propagation.
 
----
 
 ## 🧾 Results Summary
 
@@ -145,7 +98,3 @@ If extended to video:
 
 ---
 
-## 🧰 Requirements
-
-All dependencies are installed within the notebooks via `pip install` cells.  
-Key libraries include:
