@@ -66,7 +66,7 @@ Implement a Vision Transformer (ViT) from scratch in PyTorch and train it on the
 ##   Text-Driven Image Segmentation (SAM 2 + GroundingDINO)
 
 ###  Goal  
-Perform text-prompted segmentation on an image using **Segment Anything 2 (SAM 2)** guided by **GroundingDINO** for region proposals.
+Perform text-prompted segmentation on an image using **Segment Anything 2 (SAM 2)** guided by **CLIPSeg** for region proposals.
 
 ---
 
@@ -74,14 +74,12 @@ Perform text-prompted segmentation on an image using **Segment Anything 2 (SAM 2
 ###  Pipeline Overview
 
 1. **Input Image**  
-2. **Text Prompt → Region Proposal** via **GroundingDINO**  
+2. **Text Prompt → Region Proposal** via **CLIPSeg**  
 3. **Region Proposal → Mask Generation** via **SAM 2**  
 4. **Overlay Mask on Image**
 
 
-###  Limitations
-
-- Segmentation quality depends on **GroundingDINO’s region accuracy**.   
+###  Limitations  
 - SAM 2 models are large — require **GPU memory ≥ 12 GB** for smooth inference.
 
 ---
